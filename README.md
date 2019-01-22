@@ -1,24 +1,8 @@
-# SpreeContactUs 
-[![Build Status](https://secure.travis-ci.org/spree-contrib/spree_contact_us.png)](http://travis-ci.org/spree-contrib/spree_contact_us) [![Dependency Status](https://gemnasium.com/spree-contrib/spree_contact_us.png?travis)](https://gemnasium.com/spree-contrib/spree_contact_us)
-A Rails 4+ Engine providing a basic contact form as a Spree Extension.
-
-[travis]: http://travis-ci.org/spree-contrib/spree_contact_us
-[gemnasium]: https://gemnasium.com/spree-contrib/spree_contact_us
-
-Modified version of the `contact_us` gem to work with Spree.
-
-## REQUIREMENTS
-
-SpreeContactUs requires:
-
-* Spree Core 3.1 or greater
-* Ruby 2.2.0 or greater.
-
 ## INSTALLATION
 
 In your `Gemfile`, add the following dependencies:
 
-    gem 'spree_contact_us', :git => 'https://github.com/spree-contrib/spree_contact_us'
+    gem 'spree_contact_us', github: 'rubyonrailsdeveloper/spree_contactUs'
 
 From `Rails.root` run:
 
@@ -80,31 +64,3 @@ Be sure to bundle your dependencies and then create a dummy test app for the spe
     $ bundle
     $ bundle exec rake test_app
     $ bundle exec rspec spec
-
-## TODO
-
-* Modify settings within the admin
-* Add new language translations
-
-## CONTRIBUTING
-
-In the spirit of [free software](http://www.fsf.org/licensing/essays/free-sw.html), **everyone** is encouraged to help improve this project.
-
-Here are some ways *you* can contribute:
-
-* by using prerelease versions
-* by reporting bugs
-* by suggesting new features
-* by [translating to a new language](https://github.com/spree-contrib/spree_contact_us/tree/master/config/locales)
-* by writing or editing documentation
-* by writing specifications
-* by writing code (**no patch is too small**: fix typos, add comments, clean up inconsistent whitespace)
-* by refactoring code
-* by resolving [issues](https://github.com/spree-contrib/spree_contact_us/issues)
-* by reviewing patches
-
-## Donating
-
-Bitcoin donations may be sent to: 15VHpDKWpuu8XyPpbTbRbewSRzMu5cVBMr
-
-Copyright (c) 2012-2013 Jeff Dutil, released under the [New BSD License](https://github.com/spree-contrib/spree_contact_us/tree/master/LICENSE).
