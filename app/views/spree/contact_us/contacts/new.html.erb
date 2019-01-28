@@ -1,46 +1,83 @@
-<div class="container">
- <% content_for :head do -%>
-   <meta name="title" content="<%= Spree.t(:contact_us_title) %>">
- <% end -%>
-
- <% content_for :sidebar do
-    if "products" == @current_controller && @taxon %>
-     <%= render :partial => "spree/shared/filters" %>
-   <% elsif !(@taxonomies.nil?)%>
-     <%= render :partial => "spree/shared/taxonomies" %>
-   <% end
-  end %>
-
- <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @contact } %>
-
- <h1><%= Spree.t(:contact_us_title) %></h1>
- <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
-   <% if SpreeContactUs.require_name %>
-     <p>
-       <%= f.label :name %>
-       <span class="required">*</span><br/>
-       <%= f.text_field :name, class: 'required form-control' %>
-     </p>
-   <% end %>
-   <p>
-     <%= f.label :email %>
-     <span class="required">*</span><br/>
-     <%= f.email_field :email, class: 'required form-control email' %>
-   </p>
-   <% if SpreeContactUs.require_subject %>
-     <p>
-       <%= f.label :subject %>
-       <span class="required">*</span><br/>
-       <%= f.text_field :subject, class: 'required form-control' %>
-     </p>
-   <% end %>
-   <p>
-     <%= f.label :message %>
-     <span class="required">*</span><br/>
-     <%= f.text_area :message, class: 'required form-control' %>
-   </p>
-   <p>
-     <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :title => Spree.t(:submit) %>
-   </p>
- <% end %>
+<div class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="titie-section wow fadeInDown animated ">
+          <h1>GET IN TOUCH</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 wow fadeInLeft animated">
+        <div class="left-content">
+          <h1><span>M</span>art</h1>
+          <h3>We'd love To Meet You In Person Or Via The Web!</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis urna. Donec at commodo erat.</p>
+          <div class="contact-info">
+            <p><b>Main Office:</b> 123 Elm St. New York City, NY</p>
+            <p><b>Phone:</b> 1.555.555.5555</p>
+            <p><b>Email:</b> info@yourdomain.com</p>
+          </div>
+          <div class="social-media">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 wow fadeInRight animated">
+        <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
+            <div class="row">
+              <% if SpreeContactUs.require_name %>
+                  <div class="col-md-12">
+                    <div class="input-group">
+                      <p>
+                        <%= f.text_field :name, class: 'required form-control', placeholder: 'Your Name...' %>
+                      </p>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <p>
+                    <%= f.email_field :email, class: 'required form-control email', placeholder: 'Your Email...' %>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <% if SpreeContactUs.require_subject %>
+                  <div class="col-md-12">
+                    <div class="input-group">
+                      <p>
+                        <%= f.text_field :subject, class: 'required form-control', placeholder: 'Your Subject...'  %>
+                      </p>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <%= f.text_area :message, class: 'required form-control', placeholder: 'Your Message...' %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :class => 'contact-submit', :title => Spree.t(:submit) %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
