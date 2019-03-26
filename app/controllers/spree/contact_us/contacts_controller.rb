@@ -14,10 +14,6 @@ class Spree::ContactUs::ContactsController < Spree::StoreController
     end
   end
 
-  def new
-    @contact = Spree::ContactUs::Contact.new
-    @taxonomies = Spree::Taxonomy.includes(root: :children)
-  end
 
   private
 
